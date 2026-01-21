@@ -15,6 +15,9 @@ export function initMetadataTreeUI() {
   const globalStatus = root.querySelector("#globalStatus");
   const btnLoad = root.querySelector("#btnLoad");
   const fileContentTypeInput = root.querySelector("#fileContentTypeId");
+  const btnToggleConfig = document.getElementById("btnToggleConfig");
+  const orderedSection = root.querySelector(".mtc-ordered");
+  const configSection = root.querySelector("#mtcConfigWrapper");
 
   const pills = setupPills(root);
 
@@ -29,6 +32,17 @@ export function initMetadataTreeUI() {
   // $(document).on("click", ".goToLocationRecentFile", function(){ eval($(this).attr("clickattr")) })
   // -------------------------------
   ensureStandardGoToLocationWiring();
+
+  if (btnToggleConfig && (configSection || orderedSection)) {
+    btnToggleConfig.addEventListener("click", () => {
+      const target = configSection || orderedSection;
+      const isHidden = target.hidden;
+      target.hidden = !isHidden;
+      btnToggleConfig.textContent = isHidden
+        ? "Masquer la configuration"
+        : "Afficher la configuration";
+    });
+  }
 
   btnLoad.addEventListener("click", loadRoot);
   fileContentTypeInput.addEventListener("change", loadAvailableFields);
@@ -351,10 +365,9 @@ export function initMetadataTreeUI() {
 
       window.$(document).on("click", ".goToLocationRecentFile", function () {
         const s = window.$(this).attr("clickattr");
-        if (s) {
-          // same pattern as product
-          // eslint-disable-next-line no-eval
-          eval(s);
+        const id = parseGoToLocationId(s);
+        if (id != null && typeof window.goToLocation === "function") {
+          window.goToLocation(id);
         }
       });
     }
@@ -397,7 +410,7 @@ export function initMetadataTreeUI() {
               }
 
               // Fallback if Folder isn't present
-              alert("Location:\n" + extractFirstPath(resp));
+              console.warn("Folder navigation unavailable.", extractFirstPath(resp));
             },
             null,
             true
@@ -416,12 +429,20 @@ export function initMetadataTreeUI() {
               console.error(e);
             }
           }
-          alert("Location:\n" + extractFirstPath(resp));
+          console.warn("Folder navigation unavailable.", extractFirstPath(resp));
         } catch (e) {
           console.error(e);
           alert(e?.message || "Erreur Go To Location");
         }
       };
     }
+  }
+
+  function parseGoToLocationId(value) {
+    if (!value) return null;
+    const match = String(value).match(/^\s*goToLocation\(([^)]+)\)\s*$/);
+    if (!match) return null;
+    const id = Number(String(match[1]).trim());
+    return Number.isFinite(id) ? id : null;
   }
 }
