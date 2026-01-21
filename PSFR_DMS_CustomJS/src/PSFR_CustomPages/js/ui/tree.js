@@ -363,10 +363,9 @@ export function initMetadataTreeUI() {
 
       window.$(document).on("click", ".goToLocationRecentFile", function () {
         const s = window.$(this).attr("clickattr");
-        if (s) {
-          // same pattern as product
-          // eslint-disable-next-line no-eval
-          eval(s);
+        const id = parseGoToLocationId(s);
+        if (id != null && typeof window.goToLocation === "function") {
+          window.goToLocation(id);
         }
       });
     }
@@ -435,5 +434,13 @@ export function initMetadataTreeUI() {
         }
       };
     }
+  }
+
+  function parseGoToLocationId(value) {
+    if (!value) return null;
+    const match = String(value).match(/^\s*goToLocation\(([^)]+)\)\s*$/);
+    if (!match) return null;
+    const id = Number(String(match[1]).trim());
+    return Number.isFinite(id) ? id : null;
   }
 }
