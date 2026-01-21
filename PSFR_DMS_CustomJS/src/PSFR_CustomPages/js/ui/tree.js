@@ -15,6 +15,8 @@ export function initMetadataTreeUI() {
   const globalStatus = root.querySelector("#globalStatus");
   const btnLoad = root.querySelector("#btnLoad");
   const fileContentTypeInput = root.querySelector("#fileContentTypeId");
+  const btnToggleConfig = document.getElementById("btnToggleConfig");
+  const orderedSection = root.querySelector(".mtc-ordered");
 
   const pills = setupPills(root);
 
@@ -29,6 +31,16 @@ export function initMetadataTreeUI() {
   // $(document).on("click", ".goToLocationRecentFile", function(){ eval($(this).attr("clickattr")) })
   // -------------------------------
   ensureStandardGoToLocationWiring();
+
+  if (btnToggleConfig && orderedSection) {
+    btnToggleConfig.addEventListener("click", () => {
+      const isHidden = orderedSection.hidden;
+      orderedSection.hidden = !isHidden;
+      btnToggleConfig.textContent = isHidden
+        ? "Masquer la configuration"
+        : "Afficher la configuration";
+    });
+  }
 
   btnLoad.addEventListener("click", loadRoot);
   fileContentTypeInput.addEventListener("change", loadAvailableFields);
