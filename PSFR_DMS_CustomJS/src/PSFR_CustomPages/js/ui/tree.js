@@ -16,8 +16,8 @@ export function initMetadataTreeUI() {
   const btnLoad = root.querySelector("#btnLoad");
   const fileContentTypeInput = root.querySelector("#fileContentTypeId");
   const btnToggleConfig = document.getElementById("btnToggleConfig");
-  const configSection = root.querySelector("#mtcConfigWrapper");
   const orderedSection = root.querySelector(".mtc-ordered");
+  const configSection = root.querySelector("#mtcConfigWrapper");
 
   const pills = setupPills(root);
 
