@@ -410,7 +410,7 @@ export function initMetadataTreeUI() {
               }
 
               // Fallback if Folder isn't present
-              alert("Location:\n" + extractFirstPath(resp));
+              console.warn("Folder navigation unavailable.", extractFirstPath(resp));
             },
             null,
             true
@@ -429,7 +429,7 @@ export function initMetadataTreeUI() {
               console.error(e);
             }
           }
-          alert("Location:\n" + extractFirstPath(resp));
+          console.warn("Folder navigation unavailable.", extractFirstPath(resp));
         } catch (e) {
           console.error(e);
           alert(e?.message || "Erreur Go To Location");
