@@ -17,6 +17,7 @@ export function initMetadataTreeUI() {
   const fileContentTypeInput = root.querySelector("#fileContentTypeId");
   const btnToggleConfig = document.getElementById("btnToggleConfig");
   const orderedSection = root.querySelector(".mtc-ordered");
+  const configSection = root.querySelector("#mtcConfigWrapper");
 
   const pills = setupPills(root);
 
@@ -32,10 +33,11 @@ export function initMetadataTreeUI() {
   // -------------------------------
   ensureStandardGoToLocationWiring();
 
-  if (btnToggleConfig && orderedSection) {
+  if (btnToggleConfig && (configSection || orderedSection)) {
     btnToggleConfig.addEventListener("click", () => {
-      const isHidden = orderedSection.hidden;
-      orderedSection.hidden = !isHidden;
+      const target = configSection || orderedSection;
+      const isHidden = target.hidden;
+      target.hidden = !isHidden;
       btnToggleConfig.textContent = isHidden
         ? "Masquer la configuration"
         : "Afficher la configuration";
