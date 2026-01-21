@@ -1,0 +1,193 @@
+USE [DMS_Radeef]
+GO
+
+-- OpenIn translations
+IF NOT EXISTS (SELECT 1 FROM [dbo].[TranslatorDictionary] WHERE [Keyword] = 'OpenIn')
+BEGIN
+    INSERT INTO [dbo].[TranslatorDictionary] ([Keyword], [EN], [FR], [AR], [IsSystem])
+    VALUES ('OpenIn', 'Open in', 'Ouvrir dans', N'افتح في', 0)
+END
+GO
+
+-- MessageOpenInMs translations
+IF NOT EXISTS (SELECT 1 FROM [dbo].[TranslatorDictionary] WHERE [Keyword] = 'MessageOpenInMs')
+BEGIN
+    INSERT INTO [dbo].[TranslatorDictionary] ([Keyword], [EN], [FR], [AR], [IsSystem])
+    VALUES ('MessageOpenInMs', 'This file will open in your desktop application', 'Ce fichier s''ouvrira dans votre application de bureau', N'سيتم فتح هذا الملف في تطبيق سطح المكتب الخاص بك', 0)
+END
+GO
+
+-- editInMicrosoft translations
+IF NOT EXISTS (SELECT 1 FROM [dbo].[TranslatorDictionary] WHERE [Keyword] = 'editInMicrosoft')
+BEGIN
+    INSERT INTO [dbo].[TranslatorDictionary] ([Keyword], [EN], [FR], [AR], [IsSystem])
+    VALUES ('editInMicrosoft', 'Edit in Microsoft', 'Modifier dans Microsoft', N'تحرير في مايكروسوفت', 0)
+END
+GO
+
+-- viewInMicrosoft translations
+IF NOT EXISTS (SELECT 1 FROM [dbo].[TranslatorDictionary] WHERE [Keyword] = 'viewInMicrosoft')
+BEGIN
+    INSERT INTO [dbo].[TranslatorDictionary] ([Keyword], [EN], [FR], [AR], [IsSystem])
+    VALUES ('viewInMicrosoft', 'View in Microsoft', 'Voir dans Microsoft', N'عرض في مايكروسوفت', 0)
+END
+GO
+
+-- EditIn translations
+IF NOT EXISTS (SELECT 1 FROM [dbo].[TranslatorDictionary] WHERE [Keyword] = 'EditIn')
+BEGIN
+    INSERT INTO [dbo].[TranslatorDictionary] ([Keyword], [EN], [FR], [AR], [IsSystem])
+    VALUES ('EditIn', 'Edit in', 'Modifier dans', N'تحرير في', 0)
+END
+GO
+
+-- ViewOnly translations
+IF NOT EXISTS (SELECT 1 FROM [dbo].[TranslatorDictionary] WHERE [Keyword] = 'ViewOnly')
+BEGIN
+    INSERT INTO [dbo].[TranslatorDictionary] ([Keyword], [EN], [FR], [AR], [IsSystem])
+    VALUES ('ViewOnly', 'View Only', 'Affichage uniquement', N'عرض فقط', 0)
+END
+GO
+
+-- FileCheckedOutMessage translations
+IF NOT EXISTS (SELECT 1 FROM [dbo].[TranslatorDictionary] WHERE [Keyword] = 'FileCheckedOutMessage')
+BEGIN
+    INSERT INTO [dbo].[TranslatorDictionary] ([Keyword], [EN], [FR], [AR], [IsSystem])
+    VALUES ('FileCheckedOutMessage', 'This file is currently checked out by another user. You can only view it in read-only mode.', 'Ce fichier est actuellement extrait par un autre utilisateur. Vous ne pouvez le consulter qu''en mode lecture seule.', N'هذا الملف محجوز حالياً من قبل مستخدم آخر. يمكنك فقط عرضه في وضع القراءة فقط.', 0)
+END
+GO
+
+-- AutoCADProtocolHandlerRequired translations
+IF NOT EXISTS (SELECT 1 FROM [dbo].[TranslatorDictionary] WHERE [Keyword] = 'AutoCADProtocolHandlerRequired')
+BEGIN
+    INSERT INTO [dbo].[TranslatorDictionary] ([Keyword], [EN], [FR], [AR], [IsSystem])
+    VALUES ('AutoCADProtocolHandlerRequired', 'AutoCAD Protocol Handler Required', 'Gestionnaire de protocole AutoCAD requis', N'مطلوب معالج بروتوكول AutoCAD', 0)
+END
+GO
+
+-- AutoCADProtocolHandlerDescription translations
+IF NOT EXISTS (SELECT 1 FROM [dbo].[TranslatorDictionary] WHERE [Keyword] = 'AutoCADProtocolHandlerDescription')
+BEGIN
+    INSERT INTO [dbo].[TranslatorDictionary] ([Keyword], [EN], [FR], [AR], [IsSystem])
+    VALUES ('AutoCADProtocolHandlerDescription', 'To edit and view AutoCAD files directly from your browser, you need to install the AutoCAD Protocol Handler.', 'Pour éditer et visualiser les fichiers AutoCAD directement depuis votre navigateur, vous devez installer le gestionnaire de protocole AutoCAD.', N'لتحرير وعرض ملفات AutoCAD مباشرة من متصفحك، تحتاج إلى تثبيت معالج بروتوكول AutoCAD.', 0)
+END
+GO
+
+-- AutoCADProtocolHandlerNote translations
+IF NOT EXISTS (SELECT 1 FROM [dbo].[TranslatorDictionary] WHERE [Keyword] = 'AutoCADProtocolHandlerNote')
+BEGIN
+    INSERT INTO [dbo].[TranslatorDictionary] ([Keyword], [EN], [FR], [AR], [IsSystem])
+    VALUES ('AutoCADProtocolHandlerNote', 'This is a one-time installation that enables seamless integration with AutoCAD.', 'Il s''agit d''une installation unique qui permet une intégration transparente avec AutoCAD.', N'هذا تثبيت لمرة واحدة يتيح التكامل السلس مع AutoCAD.', 0)
+END
+GO
+
+-- Cancel translations
+IF NOT EXISTS (SELECT 1 FROM [dbo].[TranslatorDictionary] WHERE [Keyword] = 'Cancel')
+BEGIN
+    INSERT INTO [dbo].[TranslatorDictionary] ([Keyword], [EN], [FR], [AR], [IsSystem])
+    VALUES ('Cancel', 'Cancel', 'Annuler', N'إلغاء', 0)
+END
+GO
+
+-- DownloadInstaller translations
+IF NOT EXISTS (SELECT 1 FROM [dbo].[TranslatorDictionary] WHERE [Keyword] = 'DownloadInstaller')
+BEGIN
+    INSERT INTO [dbo].[TranslatorDictionary] ([Keyword], [EN], [FR], [AR], [IsSystem])
+    VALUES ('DownloadInstaller', 'Download Installer', 'Télécharger l''installateur', N'تحميل المثبت', 0)
+END
+GO
+
+PRINT 'WebDAV translations have been successfully added.'
+GO
+
+-- ========================================
+-- Action Table Insert
+-- ========================================
+
+-- Insert editInMicrosoft Action
+IF NOT EXISTS (SELECT 1 FROM [dbo].[Action] WHERE [Name] = 'editInMicrosoft')
+BEGIN
+    INSERT INTO [dbo].[Action]
+           ([Name]
+           ,[Order]
+           ,[Icon]
+           ,[Color]
+           ,[Tooltip]
+           ,[ParentActionId]
+           ,[Type]
+           ,[JsFunction]
+           ,[Callback]
+           ,[ShowInReadMode]
+           ,[ShowInEditMode]
+           ,[MinimumPermissionLevelId]
+           ,[CreatedByUserId]
+           ,[CreatedDate]
+           ,[ModifiedDate])
+     VALUES
+           ('editInMicrosoft'
+           ,3
+           ,'fab fa-microsoft'
+           ,'#00AE8D'
+           ,'editInMicrosoft'
+           ,NULL
+           ,3
+           ,'editInMicrosoft()'
+           ,'editInMicrosoftEnabled'
+           ,NULL
+           ,NULL
+           ,1
+           ,1
+           ,GETDATE()
+           ,GETDATE())
+
+    PRINT 'editInMicrosoft action has been successfully added.'
+END
+ELSE
+BEGIN
+    PRINT 'editInMicrosoft action already exists.'
+END
+GO
+
+-- Insert viewInMicrosoft Action
+IF NOT EXISTS (SELECT 1 FROM [dbo].[Action] WHERE [Name] = 'viewInMicrosoft')
+BEGIN
+    INSERT INTO [dbo].[Action]
+           ([Name]
+           ,[Order]
+           ,[Icon]
+           ,[Color]
+           ,[Tooltip]
+           ,[ParentActionId]
+           ,[Type]
+           ,[JsFunction]
+           ,[Callback]
+           ,[ShowInReadMode]
+           ,[ShowInEditMode]
+           ,[MinimumPermissionLevelId]
+           ,[CreatedByUserId]
+           ,[CreatedDate]
+           ,[ModifiedDate])
+     VALUES
+           ('viewInMicrosoft'
+           ,3
+           ,'fab fa-microsoft'
+           ,'#00AE8D'
+           ,'editInMicrosoft'
+           ,NULL
+           ,3
+           ,'viewInMicrosoft()'
+           ,'viewInMicrosoftEnabled'
+           ,NULL
+           ,NULL
+           ,1
+           ,1
+           ,GETDATE()
+           ,GETDATE())
+
+    PRINT 'viewInMicrosoft action has been successfully added.'
+END
+ELSE
+BEGIN
+    PRINT 'viewInMicrosoft action already exists.'
+END
+GO

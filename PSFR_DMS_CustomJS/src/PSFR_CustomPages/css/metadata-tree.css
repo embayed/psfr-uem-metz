@@ -1,0 +1,266 @@
+/* =========================================================
+   Metadata Tree Explorer – Final CSS (Readable + DMS-like)
+   ========================================================= */
+.btnMargin{
+      margin-top: 1em;
+}
+#metadata-tree-explorer.mtc-root {
+  --brand-green: #00AE8D;
+  --brand-green-dark: #009579;
+  --brand-soft-bg: #E0F6F1;
+  --brand-soft-bg-strong: #C3EDE3;
+  --arrow-color: #d54387;
+
+  padding: 16px;
+  background-color: #f5f6fa;
+
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* Headings */
+#metadata-tree-explorer .content-heading,
+#metadata-tree-explorer h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+/* Layout blocks */
+#metadata-tree-explorer .mtc-top {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+#metadata-tree-explorer .mtc-ordered {
+  flex: 1;
+  min-width: 420px;
+}
+
+#metadata-tree-explorer .mtc-controls {
+  width: 280px;
+  min-width: 260px;
+}
+
+#metadata-tree-explorer .mtc-load {
+  width: 100%;
+  margin-top: 10px;
+}
+
+#metadata-tree-explorer .mtc-status {
+  margin-top: 4em;
+}
+
+#metadata-tree-explorer .mtc-main {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+#metadata-tree-explorer .mtc-col {
+  flex: 1;
+  min-width: 420px;
+}
+
+/* Help box */
+#metadata-tree-explorer .mtc-help {
+  margin: 6px 0 10px 0;
+  padding: 10px 12px;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 13px;
+  color: #566;
+}
+
+#metadata-tree-explorer .mtc-help-line {
+  display: flex;
+  gap: 8px;
+  line-height: 18px;
+}
+
+#metadata-tree-explorer .mtc-help-dot {
+  color: var(--brand-green);
+  font-weight: 700;
+}
+
+/* Inputs & buttons (match DMS scale) */
+#metadata-tree-explorer input.form-control,
+#metadata-tree-explorer input.form-control.input-sm {
+  height: 36px;
+  font-size: 14px;
+}
+
+#metadata-tree-explorer .btn {
+  height: 36px;
+  font-size: 14px;
+  padding: 6px 14px;
+}
+
+#metadata-tree-explorer .btn-primary {
+  background-color: var(--brand-green) !important;
+  border-color: var(--brand-green-dark) !important;
+}
+
+/* Wrapper */
+#metadata-tree-explorer .ordered-fields-wrapper {
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  padding: 12px 14px;
+  background-color: #ffffff;
+}
+
+/* Ordered list (vertical) */
+#metadata-tree-explorer #orderedFieldsList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Available list (wrap) */
+#metadata-tree-explorer #availableFieldsList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* Ordered pill */
+#metadata-tree-explorer .ordered-field-pill {
+  font-weight: 600; 
+  padding: 8px 12px;
+  border-radius: 8px;
+  background-color: #e9faf6;
+  border: 1px solid var(--brand-green);
+  font-size: 14px;
+  min-height: 36px;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: grab;
+  transition: box-shadow 0.12s ease, background-color 0.12s ease, opacity 0.12s ease;
+}
+
+/* Dragging feedback */
+#metadata-tree-explorer .ordered-field-pill.dragging {
+  opacity: 0.85;
+  background-color: var(--brand-soft-bg-strong);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Drag handle */
+#metadata-tree-explorer .pill-handle {
+  font-size: 16px;
+  cursor: grab;
+  color: var(--brand-green-dark);
+  margin-right: 2px;
+  opacity: 0.95;
+}
+
+/* Remove button */
+#metadata-tree-explorer .pill-remove {
+  margin-left: auto;
+  cursor: pointer;
+  font-size: 16px;
+  color: #ff4d4d;
+  line-height: 1;
+}
+
+#metadata-tree-explorer .pill-remove:hover {
+  color: #d90000;
+}
+
+/* Available pill */
+#metadata-tree-explorer .available-pill {
+  padding: 6px 12px;
+  border-radius: 16px;
+  background-color: #ffffff;
+  border: 1.5px dashed var(--brand-green);
+  font-size: 13px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  opacity: 0.95;
+  user-select: none;
+  transition: background-color 0.12s ease, border-color 0.12s ease;
+}
+
+#metadata-tree-explorer .available-pill:hover {
+  background-color: var(--brand-soft-bg);
+  border-color: var(--brand-green-dark);
+}
+
+/* Add row */
+#metadata-tree-explorer .mtc-add {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+/* Tree */
+#metadata-tree-explorer .tree-container {
+  max-height: 75vh;
+  overflow-y: auto;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  background-color: #fff;
+  padding: 10px 15px;
+}
+
+#metadata-tree-explorer ul.tree-list {
+  list-style: none;
+  padding-left: 18px;
+  margin: 0;
+}
+
+#metadata-tree-explorer .tree-node-label {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 6px;
+  border-radius: 6px;
+  transition: background-color 0.12s ease-in-out;
+  font-size: 14px;
+}
+
+#metadata-tree-explorer .tree-node-label:hover {
+  background-color: var(--brand-soft-bg);
+}
+
+#metadata-tree-explorer .tree-icon {
+  width: 16px;
+  height: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Badge */
+#metadata-tree-explorer .tree-badge {
+  font-size: 11px;
+  background-color: var(--brand-green) !important;
+  color: #fff !important;
+  padding: 3px 6px;
+  border-radius: 10px;
+}
+
+/* Selected node */
+#metadata-tree-explorer .selected-node {
+  background-color: var(--brand-soft-bg-strong) !important;
+}
+
+/* Loading text */
+#metadata-tree-explorer .loading-text {
+  color: #6c757d;
+  font-size: 12px;
+  padding: 6px 0;
+}

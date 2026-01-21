@@ -1,0 +1,9 @@
+{
+  "devDependencies": {
+    "esbuild": "^0.27.1",
+    "gulp": "^5.0.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-uglify": "^3.0.2"
+  }
+}

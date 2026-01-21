@@ -1,0 +1,67 @@
+/* ===========================
+   Collapsible Red Zone
+   =========================== */
+#redZoneWrapper {
+    max-height: 5000px;
+}
+#redZoneWrapper.is-collapsed {
+    max-height: 0;
+}
+/* ===========================
+   Collapsible Red Zone (scoped)
+   =========================== */
+
+#metadata-tree-explorer #redZoneWrapper {
+    overflow: hidden;
+    transition: max-height 0.35s ease, opacity 0.25s ease;
+    max-height: 2000px;
+    opacity: 1;
+}
+
+#metadata-tree-explorer #redZoneWrapper.is-collapsed {
+    max-height: 0;
+    opacity: 0;
+    pointer-events: none;
+}
+#metadata-tree-explorer #mtcConfigWrapper {
+    overflow: hidden;
+    transition: max-height 0.35s ease, opacity 0.25s ease;
+    max-height: 2000px;
+    opacity: 1;
+}
+
+#metadata-tree-explorer #mtcConfigWrapper.is-collapsed {
+    max-height: 0;
+    opacity: 0;
+    pointer-events: none;
+}
+
+#redZoneWrapper {
+    overflow: hidden;
+    transition: max-height 0.35s ease, opacity 0.25s ease;
+    max-height: 5000px; /* large enough to fit content */
+    opacity: 1;
+}
+
+/* Collapsed state */
+#redZoneWrapper.is-collapsed {
+    max-height: 0;
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Toggle button refinement */
+#btnToggleRedZone {
+    border-radius: 6px;
+    padding: 4px 10px;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Optional hover polish */
+#btnToggleRedZone:hover {
+    background-color: #e6f7f3; /* light shade of #00AE8D */
+    color: #008b6d;
+}

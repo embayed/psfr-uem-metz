@@ -1,0 +1,208 @@
+========================================
+WebDAV Integration Translations (PostgreSQL)
+========================================
+
+DO $$
+BEGIN
+     OpenIn
+    IF NOT EXISTS (SELECT 1 FROM public."TranslatorDictionary" WHERE "Keyword" = 'OpenIn') THEN
+        INSERT INTO public."TranslatorDictionary"("Keyword", "EN", "FR", "AR", "IsSystem")
+        VALUES ('OpenIn', 'Open in', 'Ouvrir dans', 'افتح في', false);
+    END IF;
+
+     MessageOpenInMs
+    IF NOT EXISTS (SELECT 1 FROM public."TranslatorDictionary" WHERE "Keyword" = 'MessageOpenInMs') THEN
+        INSERT INTO public."TranslatorDictionary"("Keyword", "EN", "FR", "AR", "IsSystem")
+        VALUES ('MessageOpenInMs', 'This file will open in your desktop application', 'Ce fichier s''ouvrira dans votre application de bureau', 'سيتم فتح هذا الملف في تطبيق سطح المكتب الخاص بك', false);
+    END IF;
+
+     editInMicrosoft
+    IF NOT EXISTS (SELECT 1 FROM public."TranslatorDictionary" WHERE "Keyword" = 'editInMicrosoft') THEN
+        INSERT INTO public."TranslatorDictionary"("Keyword", "EN", "FR", "AR", "IsSystem")
+        VALUES ('editInMicrosoft', 'Edit in Desktop', 'Modifier dans bureau', 'تحرير في سطح المكتب', false);
+    END IF;
+
+     viewInMicrosoft
+    IF NOT EXISTS (SELECT 1 FROM public."TranslatorDictionary" WHERE "Keyword" = 'viewInMicrosoft') THEN
+        INSERT INTO public."TranslatorDictionary"("Keyword", "EN", "FR", "AR", "IsSystem")
+        VALUES ('viewInMicrosoft', 'View in Desktop', 'Voir dans bureau', 'عرض في مايكروسوفت', false);
+    END IF;
+
+     EditIn
+    IF NOT EXISTS (SELECT 1 FROM public."TranslatorDictionary" WHERE "Keyword" = 'EditIn') THEN
+        INSERT INTO public."TranslatorDictionary"("Keyword", "EN", "FR", "AR", "IsSystem")
+        VALUES ('EditIn', 'Edit in', 'Modifier dans', 'تحرير في', false);
+    END IF;
+
+     ViewOnly
+    IF NOT EXISTS (SELECT 1 FROM public."TranslatorDictionary" WHERE "Keyword" = 'ViewOnly') THEN
+        INSERT INTO public."TranslatorDictionary"("Keyword", "EN", "FR", "AR", "IsSystem")
+        VALUES ('ViewOnly', 'View Only', 'Affichage uniquement', 'عرض فقط', false);
+    END IF;
+
+     FileCheckedOutMessage
+    IF NOT EXISTS (SELECT 1 FROM public."TranslatorDictionary" WHERE "Keyword" = 'FileCheckedOutMessage') THEN
+        INSERT INTO public."TranslatorDictionary"("Keyword", "EN", "FR", "AR", "IsSystem")
+        VALUES (
+            'FileCheckedOutMessage',
+            'This file is currently checked out by another user. You can only view it in read-only mode.',
+            'Ce fichier est actuellement extrait par un autre utilisateur. Vous ne pouvez le consulter qu''en mode lecture seule.',
+            'هذا الملف محجوز حالياً من قبل مستخدم آخر. يمكنك فقط عرضه في وضع القراءة فقط.',
+            false
+        );
+    END IF;
+
+     AutoCADProtocolHandlerRequired
+    IF NOT EXISTS (SELECT 1 FROM public."TranslatorDictionary" WHERE "Keyword" = 'AutoCADProtocolHandlerRequired') THEN
+        INSERT INTO public."TranslatorDictionary"("Keyword", "EN", "FR", "AR", "IsSystem")
+        VALUES (
+            'AutoCADProtocolHandlerRequired',
+            'AutoCAD Protocol Handler Required',
+            'Gestionnaire de protocole AutoCAD requis',
+            'مطلوب معالج بروتوكول AutoCAD',
+            false
+        );
+    END IF;
+
+     AutoCADProtocolHandlerDescription
+    IF NOT EXISTS (SELECT 1 FROM public."TranslatorDictionary" WHERE "Keyword" = 'AutoCADProtocolHandlerDescription') THEN
+        INSERT INTO public."TranslatorDictionary"("Keyword", "EN", "FR", "AR", "IsSystem")
+        VALUES (
+            'AutoCADProtocolHandlerDescription',
+            'To edit and view AutoCAD files directly from your browser, you need to install the AutoCAD Protocol Handler.',
+            'Pour éditer et visualiser les fichiers AutoCAD directement depuis votre navigateur, vous devez installer le gestionnaire de protocole AutoCAD.',
+            'لتحرير وعرض ملفات AutoCAD مباشرة من متصفحك، تحتاج إلى تثبيت معالج بروتوكول AutoCAD.',
+            false
+        );
+    END IF;
+
+     AutoCADProtocolHandlerNote
+    IF NOT EXISTS (SELECT 1 FROM public."TranslatorDictionary" WHERE "Keyword" = 'AutoCADProtocolHandlerNote') THEN
+        INSERT INTO public."TranslatorDictionary"("Keyword", "EN", "FR", "AR", "IsSystem")
+        VALUES (
+            'AutoCADProtocolHandlerNote',
+            'This is a one-time installation that enables seamless integration with AutoCAD.',
+            'Il s''agit d''une installation unique qui permet une intégration transparente avec AutoCAD.',
+            'هذا تثبيت لمرة واحدة يتيح التكامل السلس مع AutoCAD.',
+            false
+        );
+    END IF;
+
+     Cancel
+    IF NOT EXISTS (SELECT 1 FROM public."TranslatorDictionary" WHERE "Keyword" = 'Cancel') THEN
+        INSERT INTO public."TranslatorDictionary"("Keyword", "EN", "FR", "AR", "IsSystem")
+        VALUES (
+            'Cancel',
+            'Cancel',
+            'Annuler',
+            'إلغاء',
+            false
+        );
+    END IF;
+
+     DownloadInstaller
+    IF NOT EXISTS (SELECT 1 FROM public."TranslatorDictionary" WHERE "Keyword" = 'DownloadInstaller') THEN
+        INSERT INTO public."TranslatorDictionary"("Keyword", "EN", "FR", "AR", "IsSystem")
+        VALUES (
+            'DownloadInstaller',
+            'Download Installer',
+            'Télécharger l''installateur',
+            'تحميل المثبت',
+            false
+        );
+    END IF;
+
+    RAISE NOTICE 'WebDAV translations have been successfully added.';
+END $$;
+
+========================================
+Action Table Insert (PostgreSQL)
+========================================
+
+DO $$
+BEGIN
+     Insert editInMicrosoft Action
+    IF NOT EXISTS (SELECT 1 FROM public."Action" WHERE "Name" = 'editInMicrosoft') THEN
+        INSERT INTO public."Action"(
+            "Name",
+            "Order",
+            "Icon",
+            "Color",
+            "Tooltip",
+            "ParentActionId",
+            "Type",
+            "JsFunction",
+            "Callback",
+            "ShowInReadMode",
+            "ShowInEditMode",
+            "MinimumPermissionLevelId",
+            "CreatedByUserId",
+            "CreatedDate",
+            "ModifiedDate"
+        )
+        VALUES (
+            'editInMicrosoft',
+            3,
+            'fab fa-microsoft',
+            '#00AE8D',
+            'editInMicrosoft',
+            NULL,
+            3,
+            'editInMicrosoft()',
+            'editInMicrosoftEnabled',
+            NULL,
+            NULL,
+            1,
+            1,
+            NOW(),
+            NOW()
+        );
+
+        RAISE NOTICE 'editInMicrosoft action has been successfully added.';
+    ELSE
+        RAISE NOTICE 'editInMicrosoft action already exists.';
+    END IF;
+
+     Insert viewInMicrosoft Action
+    IF NOT EXISTS (SELECT 1 FROM public."Action" WHERE "Name" = 'viewInMicrosoft') THEN
+        INSERT INTO public."Action"(
+            "Name",
+            "Order",
+            "Icon",
+            "Color",
+            "Tooltip",
+            "ParentActionId",
+            "Type",
+            "JsFunction",
+            "Callback",
+            "ShowInReadMode",
+            "ShowInEditMode",
+            "MinimumPermissionLevelId",
+            "CreatedByUserId",
+            "CreatedDate",
+            "ModifiedDate"
+        )
+        VALUES (
+            'viewInMicrosoft',
+            3,
+            'fab fa-microsoft',
+            '#00AE8D',
+            'editInMicrosoft',
+            NULL,
+            3,
+            'viewInMicrosoft()',
+            'viewInMicrosoftEnabled',
+            NULL,
+            NULL,
+            1,
+            1,
+            NOW(),
+            NOW()
+        );
+
+        RAISE NOTICE 'viewInMicrosoft action has been successfully added.';
+    ELSE
+        RAISE NOTICE 'viewInMicrosoft action already exists.';
+    END IF;
+END $$;
+ 

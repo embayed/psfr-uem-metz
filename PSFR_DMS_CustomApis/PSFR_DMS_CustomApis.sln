@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34728.123
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PSFR_DMS_CustomApis", "PSFR_DMS_CustomApis\PSFR_DMS_CustomApis.csproj", "{C115FD20-5EC6-45D8-A900-1C4957A5763B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PSFR_Services", "PSFR_Services\PSFR_Services.csproj", "{F00A75C2-F521-4601-8F96-BF23448496D0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PSFR_Repository", "PSFR_Repository\PSFR_Repository.csproj", "{4256CE0B-5294-47F0-B373-0C24A8D7850F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PSFR_EditInDesktop", "PSFR_EditInDesktop\PSFR_EditInDesktop.csproj", "{727741DE-9715-4EE3-B89A-33A470D93D7E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PSFR_AutoCAD_ProtocolHandler", "PSFR_AutoCAD_ProtocolHandler\PSFR_AutoCAD_ProtocolHandler.csproj", "{64FFCA83-A8CA-49F1-BEBB-1B8170F615F3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C115FD20-5EC6-45D8-A900-1C4957A5763B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C115FD20-5EC6-45D8-A900-1C4957A5763B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C115FD20-5EC6-45D8-A900-1C4957A5763B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C115FD20-5EC6-45D8-A900-1C4957A5763B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F00A75C2-F521-4601-8F96-BF23448496D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F00A75C2-F521-4601-8F96-BF23448496D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F00A75C2-F521-4601-8F96-BF23448496D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F00A75C2-F521-4601-8F96-BF23448496D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4256CE0B-5294-47F0-B373-0C24A8D7850F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4256CE0B-5294-47F0-B373-0C24A8D7850F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4256CE0B-5294-47F0-B373-0C24A8D7850F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4256CE0B-5294-47F0-B373-0C24A8D7850F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{727741DE-9715-4EE3-B89A-33A470D93D7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{727741DE-9715-4EE3-B89A-33A470D93D7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{727741DE-9715-4EE3-B89A-33A470D93D7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{727741DE-9715-4EE3-B89A-33A470D93D7E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{64FFCA83-A8CA-49F1-BEBB-1B8170F615F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64FFCA83-A8CA-49F1-BEBB-1B8170F615F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64FFCA83-A8CA-49F1-BEBB-1B8170F615F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64FFCA83-A8CA-49F1-BEBB-1B8170F615F3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {022B91A2-06FC-4A8E-AE1A-98DEF23F36A3}
+	EndGlobalSection
+EndGlobal

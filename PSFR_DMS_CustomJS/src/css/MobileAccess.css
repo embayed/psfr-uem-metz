@@ -1,0 +1,251 @@
+@media (max-width: 767px) {
+.file-details.col-md-6.pl0 {
+   position: fixed !important;
+   inset: 0;
+   z-index: 9999;
+   background: #fff;
+   overflow: hidden;
+ }
+ 
+ .file-details .panel {
+   height: 100vh;
+   margin: 0 !important;
+   display: flex;
+   flex-direction: column;
+   border-radius: 0;
+ }
+ 
+ .file-details .panel-heading {
+   flex: 0 0 auto;
+   background: #fff;
+   z-index: 1;
+ }
+ 
+ .file-details .panel-body {
+   flex: 1 1 auto;
+   overflow: auto;
+  -webkit-overflow-scrolling: touch;
+   height: auto !important;
+ }
+}
+
+
+
+@media (max-width: 767px) {
+  .content-wrapper,
+  .search,
+  .panel,
+  .panel-body {
+    overflow-x: hidden;
+  }
+
+  .content-heading {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .content-heading > button,
+  .content-heading > div {
+    float: none !important;
+  }
+
+  .content-heading .pull-right {
+    width: 100%;
+    text-align: left;
+  }
+
+  .query-builder {
+    padding: 0;
+  }
+
+  .query-builder .rules-group-header {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .query-builder .group-conditions,
+  .query-builder .group-actions {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .query-builder .group-conditions .btn {
+    width: 50%;
+  }
+
+  .query-builder .rule-container {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .query-builder .rule-row {
+    width: 100% !important;
+    padding: 0;
+  }
+
+  .query-builder select,
+  .query-builder input,
+  .query-builder .select2-container {
+    width: 100% !important;
+  }
+
+  #selectOptionCon1 {
+    width: 100% !important;
+  }
+  .panel {
+    margin-bottom: 10px;
+  }
+
+  .panel-body {
+    padding: 10px;
+  }
+
+  .panel-footer .pull-right,
+  .panel-footer .pull-left {
+    float: none !important;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .panel-footer button {
+    width: 100%;
+  }
+
+  .select2-container--bootstrap .select2-selection {
+    min-height: 36px;
+  }
+
+  .modal-dialog {
+    width: auto;
+    margin: 10px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .query-builder .rule-container {
+    flex-wrap: wrap;
+  }
+
+  .query-builder .rule-row {
+    margin-bottom: 6px;
+  }
+
+  .query-builder .group-actions {
+    flex-wrap: wrap;
+  }
+}
+ 
+@media (max-width: 767px) {
+  .content-wrapper,
+  .search,
+  .panel,
+  .panel-body {
+    overflow-x: hidden;
+  }
+
+  .content-heading {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .content-heading > button,
+  .content-heading > div {
+    float: none !important;
+  }
+
+  .content-heading .pull-right {
+    width: 100%;
+    text-align: left;
+  }
+
+  .query-builder {
+    padding: 0;
+  }
+
+  .query-builder .rules-group-header {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .query-builder .group-conditions,
+  .query-builder .group-actions {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .query-builder .group-conditions .btn {
+    width: 50%;
+  }
+
+  .query-builder .rule-container {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .query-builder .rule-row {
+    width: 100% !important;
+    padding: 0;
+  }
+
+  .query-builder select,
+  .query-builder input,
+  .query-builder .select2-container {
+    width: 100% !important;
+  }
+
+  #selectOptionCon1 {
+    width: 100% !important;
+  }
+  .panel {
+    margin-bottom: 10px;
+  }
+
+  .panel-body {
+    padding: 10px;
+  }
+
+  .panel-footer .pull-right,
+  .panel-footer .pull-left {
+    float: none !important;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .panel-footer button {
+    width: 100%;
+  }
+
+  .select2-container--bootstrap .select2-selection {
+    min-height: 36px;
+  }
+
+  .modal-dialog {
+    width: auto;
+    margin: 10px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .query-builder .rule-container {
+    flex-wrap: wrap;
+  }
+
+  .query-builder .rule-row {
+    margin-bottom: 6px;
+  }
+
+  .query-builder .group-actions {
+    flex-wrap: wrap;
+  }
+}
+ 

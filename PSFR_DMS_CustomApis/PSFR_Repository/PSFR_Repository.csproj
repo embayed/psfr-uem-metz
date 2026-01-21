@@ -1,0 +1,37 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Models\LookupItems\**" />
+    <EmbeddedResource Remove="Models\LookupItems\**" />
+    <None Remove="Models\LookupItems\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Abstractions" Version="9.0.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="9.0.5" />
+    <PackageReference Include="Microsoft.SqlServer.SqlManagementObjects" Version="172.76.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Intalio.Core">
+      <HintPath>References\Intalio.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Intalio.DMS.Domain">
+      <HintPath>References\Intalio.DMS.Domain.dll</HintPath>
+    </Reference>
+    <Reference Include="Intalio.DMS.Infrastructure">
+      <HintPath>References\Intalio.DMS.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Intalio.DMS.Repository">
+      <HintPath>References\Intalio.DMS.Repository.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
