@@ -173,6 +173,7 @@ export function initMetadataTreeUI() {
   }
 
   async function loadRoot() {
+    childrenCache.clear();
     treeContainer.innerHTML = "<span class='text-muted small'>Chargement…</span>";
     detailsPanel.innerHTML = "<p class='text-muted small'>Aucun nœud sélectionné.</p>";
     lastSelected = null;
