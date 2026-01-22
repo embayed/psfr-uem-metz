@@ -41,20 +41,6 @@ export function renderMetadataTreeView() {
               <ul id="orderedFieldsList" class="mtc-ordered-list">
               </ul>
 
-              <div class="mtc-add">
-                <input
-                  id="newFieldInput"
-                  type="text"
-                  class="form-control input-sm"
-                  placeholder="Ajouter un champ (ex: referenceNumber)..."
-                />
-                <button id="btnAddField" class="btn btn-primary" type="button">
-                  Ajouter
-                </button>
-              </div>
-
-              <hr />
-
               <div class="mtc-available">
                 <small class="text-muted">Champs disponibles (cliquez pour ré-ajouter)</small>
                 <ul id="availableFieldsList"></ul>
