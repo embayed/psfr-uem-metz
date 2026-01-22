@@ -79,15 +79,13 @@ export function initMetadataTreeUI() {
 
     detailsPanel.innerHTML = `
       <div class="small text-muted mb-2">
-        Dossier: ${escapeHtml(location)} — Fichiers: ${escapeHtml(String(files.length))}
+        Dossier: ${escapeHtml(location)}
       </div>
       <table id="filesTable" class="table table-striped table-bordered" style="width:100%">
         <thead>
           <tr>
             <th>Nom</th>
-            <th>Extension</th>
-            <th>Emplacement</th>
-            <th></th>
+            <th>Emplacement physique</th>
           </tr>
         </thead>
         <tbody></tbody>
@@ -97,12 +95,9 @@ export function initMetadataTreeUI() {
     // ✅ IMPORTANT: fileId is the id used by /Files/GetFileLocation?id=...
     const rows = (files || []).map((f) => {
       const name = String(f?.label ?? "");
-      const dot = name.lastIndexOf(".");
       return {
         fileId: f?.fileId, // ✅ you said it's fileId
-        name,
-        extension: dot > -1 ? name.slice(dot + 1) : "",
-        location
+        name
       };
     });
 
@@ -114,7 +109,7 @@ export function initMetadataTreeUI() {
       const tbody = detailsPanel.querySelector("#filesTable tbody");
 
       if (!rows.length) {
-        tbody.innerHTML = `<tr><td colspan="4" class="text-muted small">Aucun fichier.</td></tr>`;
+        tbody.innerHTML = `<tr><td colspan="2" class="text-muted small">Aucun fichier.</td></tr>`;
         return;
       }
 
@@ -124,8 +119,6 @@ export function initMetadataTreeUI() {
           return `
             <tr>
               <td>${escapeHtml(r.name)}</td>
-              <td>${escapeHtml(r.extension)}</td>
-              <td>${escapeHtml(r.location)}</td>
               <td>
                 <i clickattr="goToLocation(${escapeHtml(fid)})"
                    title="Go to location"
@@ -149,11 +142,9 @@ export function initMetadataTreeUI() {
       data: rows,
       columns: [
         { data: "name", title: "Nom" },
-        { data: "extension", title: "Extension" },
-        { data: "location", title: "Emplacement" },
         {
           data: null,
-          title: "",
+          title: "Emplacement physique",
           orderable: false,
           searchable: false,
           width: "40px",
