@@ -49,7 +49,7 @@ export function renderMetadataTreeView() {
           </div>
 
           <div class="mtc-controls">
-            <label class="control-label">FileContentTypeId</label>
+            <label class="control-label">Type de contenu des fichiers</label>
             <select
               id="fileContentTypeId"
               class="form-control input-sm">

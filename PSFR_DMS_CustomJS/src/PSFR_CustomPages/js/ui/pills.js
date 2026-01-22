@@ -44,6 +44,9 @@ export function setupPills(root) {
         const li = buildAvailablePill(field, orderedFieldsList, availableFieldsList);
         availableFieldsList.appendChild(li);
       });
+    },
+    clearOrderedFields: function () {
+      orderedFieldsList.innerHTML = "";
     }
   };
 }

@@ -45,7 +45,10 @@ export function initMetadataTreeUI() {
   }
 
   btnLoad.addEventListener("click", loadRoot);
-  fileContentTypeInput.addEventListener("change", loadAvailableFields);
+  fileContentTypeInput.addEventListener("change", function () {
+    pills.clearOrderedFields();
+    loadAvailableFields();
+  });
 
   loadFileContentTypes();
 
