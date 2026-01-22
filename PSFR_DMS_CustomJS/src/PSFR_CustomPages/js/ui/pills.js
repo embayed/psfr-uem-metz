@@ -12,21 +12,23 @@ export function setupPills(root) {
   wireExisting(orderedFieldsList);
   attachRemoveHandlers(orderedFieldsList, availableFieldsList);
 
-  btnAddField.addEventListener("click", function () {
-    const value = (newFieldInput.value || "").trim();
-    if (!value) return;
+  if (btnAddField && newFieldInput) {
+    btnAddField.addEventListener("click", function () {
+      const value = (newFieldInput.value || "").trim();
+      if (!value) return;
 
-    const li = document.createElement("li");
-    li.className = "ordered-field-pill";
-    li.setAttribute("draggable", "true");
-    li.setAttribute("data-field", value);
-    li.innerHTML = "<span class='pill-handle'>⋮⋮</span><span>" + escapeHtml(value) + "</span><span class='pill-remove'>×</span>";
+      const li = document.createElement("li");
+      li.className = "ordered-field-pill";
+      li.setAttribute("draggable", "true");
+      li.setAttribute("data-field", value);
+      li.innerHTML = "<span class='pill-handle'>⋮⋮</span><span>" + escapeHtml(value) + "</span><span class='pill-remove'>×</span>";
 
-    orderedFieldsList.appendChild(li);
-    wireDragForPill(li);
-    attachRemoveHandlers(orderedFieldsList, availableFieldsList);
-    newFieldInput.value = "";
-  });
+      orderedFieldsList.appendChild(li);
+      wireDragForPill(li);
+      attachRemoveHandlers(orderedFieldsList, availableFieldsList);
+      newFieldInput.value = "";
+    });
+  }
 
   return {
     getOrderedFieldsArray: function () {
@@ -42,6 +44,9 @@ export function setupPills(root) {
         const li = buildAvailablePill(field, orderedFieldsList, availableFieldsList);
         availableFieldsList.appendChild(li);
       });
+    },
+    clearOrderedFields: function () {
+      orderedFieldsList.innerHTML = "";
     }
   };
 }
