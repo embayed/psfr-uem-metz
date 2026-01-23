@@ -55,6 +55,7 @@ function concatLegacy() {
     .src(
       [
         "dist/_ctaccessrules.concat.js",
+        "src/PSFR_threads/uem-thread.js",
         "src/js/**/*.js",
         "!src/js/CustomPages.js"
       ],
